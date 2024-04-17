@@ -1,4 +1,4 @@
-#include <iostream>
+ #include <iostream>
 #include <cstdlib>
 using namespace std;
 
@@ -35,33 +35,40 @@ int main() {
             break;
         if (v < 0 || v >= n) {
             cout << "Destination vertex does not exist\n";
-            continue;      }
+            continue;
+        }
         count = 0;
         if (Distance[v] == infinity) {
             cout << "No path from start vertex to destination vertex\n";
             continue;
         } else
             cout << "Shortest distance is " << Distance[v] << endl;
-   							     // Store the full path in the array path
-           while (v != NIL) {
+        // Store the full path in the array path
+        u = v;
+        while (u != NIL) {
             count++;
-            path[count] = v;
-            u = pred[v];
-            v = u;
+            path[count] = u;
+            u = pred[u];
         }
         cout << "Shortest path is: ";
-        for (i = count; i >= 1; i--) {
+        for (i = count; i > 0; i--) {
             cout << path[i] << " ";
         }
         cout << endl;
     }
     return 0;
-} 									//end of main
+}
+
 void create_graph() {
     int i, max_edges, origin, destin;
     cout << "Enter the number of vertices: ";
     cin >> n;
     max_edges = n * (n - 1);
+    for (i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            adj[i][j] = 0; // Initialize adjacency matrix
+        }
+    }
     for (i = 1; i <= max_edges; i++) {
         cout << "Enter edge " << i << " (enter -1 -1 to finish): ";
         cin >> origin >> destin; 
@@ -71,9 +78,11 @@ void create_graph() {
             cout << "Invalid edge! Please enter again." << endl;
             i--;
         } else {
-            adj[origin][destin] = 1; 			// Marking the existence of edge from origin to destin }
+            adj[origin][destin] = 1; // Marking the existence of edge from origin to destin
+        }
     }
-} 
+}
+
 void BF_traversal() {
     int v;
     for (v = 0; v < n; v++) {
@@ -84,7 +93,9 @@ void BF_traversal() {
     cout << "Enter the starting vertex for BFS: ";
     cin >> v;
     BFS(v);
-    cout << endl;     }
+    cout << endl;
+}
+
 void BFS(int v) {
     int i;
     insert_queue(v);
@@ -94,16 +105,18 @@ void BFS(int v) {
     while (!isEmpty_queue()) {
         v = delete_queue();
         state[v] = visited;
-        for (i = 0; i < n; i++)  {
-            //check for adjacent unvisited vertices
+        for (i = 0; i < n; i++) {
+            // Check for adjacent unvisited vertices
             if (adj[v][i] != 0 && state[i] == initial) {
                 insert_queue(i);
                 state[i] = waiting;
                 pred[i] = v;
-                Distance[i] = Distance[v] + 1;}
+                Distance[i] = Distance[v] + 1;
+            }
         }
     }
 }
+
 void insert_queue(int vertex) {
     if (rear == MAX - 1)
         cout << "Queue Overflow\n";
@@ -111,8 +124,10 @@ void insert_queue(int vertex) {
         if (front == -1)
             front = 0;
         rear = rear + 1;
-        queue[rear] = vertex;  }
+        queue[rear] = vertex;
+    }
 }
+
 int delete_queue() {
     int delete_item;
     if (front == -1 || front > rear) {
@@ -123,9 +138,43 @@ int delete_queue() {
     front = front + 1;
     return delete_item;
 }
+
 int isEmpty_queue() {
     if (front == -1 || front > rear)
         return 1;
     else
         return 0;
 }
+
+/* OUTPUT 
+Enter the number of vertices: 9
+Enter edge 1 (enter -1 -1 to finish): 0 3
+Enter edge 2 (enter -1 -1 to finish): 0 1
+Enter edge 3 (enter -1 -1 to finish): 0 4
+Enter edge 4 (enter -1 -1 to finish): 1 4
+Enter edge 5 (enter -1 -1 to finish): 1 2
+Enter edge 6 (enter -1 -1 to finish): 3 4
+Enter edge 7 (enter -1 -1 to finish): 4 5
+Enter edge 8 (enter -1 -1 to finish): 3 6
+Enter edge 9 (enter -1 -1 to finish): 6 4
+Enter edge 10 (enter -1 -1 to finish): 6 7
+Enter edge 11 (enter -1 -1 to finish): 4 7
+Enter edge 12 (enter -1 -1 to finish): 7 5
+Enter edge 13 (enter -1 -1 to finish): 7 8
+Enter edge 14 (enter -1 -1 to finish): 2 5
+Enter edge 15 (enter -1 -1 to finish): -1 -1
+Enter the starting vertex for BFS: 0
+
+Enter destination vertex (-1 to quit): 4
+Shortest distance is 1
+Shortest path is: 0 4 
+Enter destination vertex (-1 to quit): 7
+Shortest distance is 2
+Shortest path is: 0 4 7 
+Enter destination vertex (-1 to quit): 8
+Shortest distance is 3
+Shortest path is: 0 4 7 8 
+Enter destination vertex (-1 to quit): -1
+
+
+=== Code Execution Successful === */
