@@ -68,3 +68,27 @@ int main(){
   return 0;
 
 }
+/* OUTPUT 
+Enter the four elements of a matrix :
+1468
+3457
+3467
+4567
+Enter the four elements of b matrix :
+3425
+4567
+3568
+5678
+The a matrix is :
+
+1468 3457 
+3467 4567 
+The b matrix is :
+
+3425 4567 
+3568 5678 
+After multiplication using Strassen's Algorithm
+
+17362476 26333202 
+28169531 41765215 
+*/
