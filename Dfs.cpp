@@ -86,3 +86,23 @@ void create_graph() {
             adj[origin][destin] = 1; // Mark the edge }
     }
 }
+
+/* OUTPUT 
+Enter the number of nodes: 9
+Enter the edge 0 (or -1 -1 to stop): 0 1
+Enter the edge 1 (or -1 -1 to stop): 0 3
+Enter the edge 2 (or -1 -1 to stop): 1 2
+Enter the edge 3 (or -1 -1 to stop): 1 4
+Enter the edge 4 (or -1 -1 to stop): 3 4
+Enter the edge 5 (or -1 -1 to stop): 4 2
+Enter the edge 6 (or -1 -1 to stop): 4 5
+Enter the edge 7 (or -1 -1 to stop): 3 6
+Enter the edge 8 (or -1 -1 to stop): 4 7
+Enter the edge 9 (or -1 -1 to stop): 6 7
+Enter the edge 10 (or -1 -1 to stop): 7 8
+Enter the edge 11 (or -1 -1 to stop): 7 5
+Enter the edge 12 (or -1 -1 to stop): -1 -1
+Enter starting node for Depth first search: 0
+0 1 2 4 5 7 8 3 6 
+
+=== Code Execution Successful ===*/
