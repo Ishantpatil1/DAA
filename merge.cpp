@@ -58,3 +58,14 @@ int main()
       for(i=low;i<=up;i++)                           // Copying elements from temp array to original array 
       arr[i]=temp[i];
      }
+ /* OUTPUT
+enter the size of array:
+3
+enter array elements 
+11
+12
+13
+sorted list is 
+11 12 13 
+
+=== Code Execution Successful === */
