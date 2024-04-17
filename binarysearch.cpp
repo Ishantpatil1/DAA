@@ -26,3 +26,19 @@ if(i == 9)
 cout<<"\nElement not found!";               // Displaying a message indicating element not found
 return 0;                                                 // Indicating successful completion of the program
 }
+
+/* OUTPUT 
+Enter the elements in array :
+5
+3
+7
+4
+9
+8
+1
+12
+11
+Enter the element to be searched:8
+Element found !
+
+=== Code Execution Successful ===*/
