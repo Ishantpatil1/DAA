@@ -74,3 +74,17 @@ cin>>capacity;
   knapsack(num,weight,profit,capacity);
   return(0);
 }
+
+/* OUTPUT
+ Enter the number of objects:  3
+
+ Enter the weights and profit of each objects:  12 7
+8 12
+9 11
+
+ Enter the capacity of knapsack:  15
+
+ The result vector is: 	1	0.777778	0
+ Maximum profit is: 20.5556
+
+=== Code Execution Successful === */
