@@ -65,4 +65,16 @@ int main()
       return j;
      }
 
+/* OUTPUT
+enter the size of an array
+3
+enter array elements
+34
+67
+2
+sorted elements are
+2 34 67 
+
+
+=== Code Execution Successful === */
 
