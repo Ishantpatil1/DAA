@@ -167,3 +167,26 @@ void create_graph() {					// Function to create the graph
     }
 }
 
+
+
+
+/* OUTPUT 
+Enter the number of vertices: 3
+Enter edges (-1 -1 to quit) 1:0 0
+Enter weight for this edge: 6
+Enter edges (-1 -1 to quit) 2:0 1
+Enter weight for this edge: 7
+Enter edges (-1 -1 to quit) 3:0 2
+Enter weight for this edge: 10
+Enter edges (-1 -1 to quit) 4:1 1
+Enter weight for this edge: 1
+Enter edges (-1 -1 to quit) 5:1 2
+Enter weight for this edge: -11
+Enter edges (-1 -1 to quit) 6:2 0
+Enter weight for this edge: 5
+Enter source vertex: 0
+Enter destination vertex (-1 to quit): 2
+Shortest path is: 012
+Shortest distance is: -4
+Enter destination vertex (-1 to quit): 
+*/
