@@ -142,3 +142,29 @@ void create_graph() {
     }  
 }
 
+
+/* OUTPUT
+Enter the number of vertices: 3
+Enter edge 1 (enter -1 -1 to finish): 0 0
+Enter weight of this edge: 5
+Enter edge 2 (enter -1 -1 to finish): 0 1
+Enter weight of this edge: 2
+Enter edge 3 (enter -1 -1 to finish): 0 2
+Enter weight of this edge: 7
+Enter edge 4 (enter -1 -1 to finish): 1 1
+Enter weight of this edge: 8
+Enter edge 5 (enter -1 -1 to finish): 1 2
+Enter weight of this edge: 3
+Enter edge 6 (enter -1 -1 to finish): 2 0
+Enter weight of this edge: 9
+Enter the source vertex: 0
+Enter destination vertex (-1 to quit): 3
+This vertex does not exist
+Enter destination vertex (-1 to quit): 1
+Shortest path is: 0 1 
+The shortest distance is: 2
+Enter destination vertex (-1 to quit): 0 1
+Source and destination vertices are the same
+Enter destination vertex (-1 to quit): Shortest path is: 0 1 
+The shortest distance is: 2
+Enter destination vertex (-1 to quit): */
